@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SatSan Capital</title>
+<link rel="stylesheet" href="style.css">
+  <style>
+
+  /*CURSOR THING*/
+      .typing{
+  overflow: hidden;
+  white-space: nowrap;
+
+  border-right: 3px solid black;
+
+  width: 0;
+
+  font-size: 55px;
+  font-weight: 400;
+
+  animation-fill-mode: forwards;
+}
+
+/* FIRST LINE */
+.first{
+  animation:
+    typing 2s steps(20, end) forwards,
+    blink 0.7s step-end 3;
+}
+
+/* SECOND LINE */
+.second{
+
+  opacity: 0;
+
+  animation:
+    show 0s forwards 2s,
+    typing 2s steps(20, end) forwards 2s,
+    blink 0.0s step-end 0s;
+}
+/* FIRST LINE */
+.first{
+  animation:
+    typing 2s steps(20, end) forwards,
+    blink 0.7s step-end 3,
+    hideCursor 0s forwards 2.1s;
+}
+
+/* SECOND LINE */
+.second{
+
+  opacity: 0;
+
+  animation:
+    show 0s forwards 2s,
+    typing 2s steps(20, end) forwards 2s,
+    blink 0.7s step-end 3 2s,
+    hideCursor 0s forwards 4.1s;
+}
+@keyframes typing{
+  from{
+    width:0;
+  }
+
+  to{
+    width:40%;
+  }
+}
+
+@keyframes blink{
+  50%{
+    border-color: transparent;
+  }
+}
+
+@keyframes show{
+  to{
+    opacity:1;
+  }
+}
+@keyframes hideCursor{
+  to{
+    border-right: none;
+  }
+}
+ 
+    .hero p{
+      font-size:18px;
+      max-width:700px;
+      line-height:1.6;
+      color:#555;
+      margin-bottom:20px;
+    }
+
+    
+    /* MOBILE */
+
+    @media(max-width:768px){
+
+      nav{
+        flex-direction:column;
+        gap:20px;
+        padding:20px;
+      }
+
+      .hero h1{
+        font-size:40px;
+      }
+
+      .hero p{
+        font-size:17px;
+      }
+
+      .container{
+        margin:30px 20px;
+        padding:25px;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <nav>
+
+    <!-- EMPTY LOGO PLACEHOLDER -->
+    <div class="logo">
+      <img src="logo.png">
+    </div>
+    
+
+    <!-- NAVIGATION -->
+    <div class="nav-links">
+
+    <a href="index.html">Home</a>
+
+    <a href="About Us.html">About Us</a>
+
+    <a href="Services.html">Services</a>
+    <a href="Products.html">Products</a>
+
+    <a href="Contact Us.html">Contact Us</a>
+
+</div>
+
+  </nav>
+
+  <!-- MAIN CONTENT -->
+
+  <div id="main-content">
+
+    <!-- HOMEPAGE -->
+
+    <section class="hero">
+    
+
+      <h1 class="typing first">Creating Wealth,</h1>
+      <h1 class="typing second"> Building Futures.</h1>
+
+    <p> </p>
+    <p>  </p>
+
+
+      <p>        
+        Financial growth isn't built overnight.
+It's created through smart planning, disciplined investing, and trusted guidance.</p>
+<p>At SatSan Capital, we believe wealth creation is about clarity, consistency, and a long-term vision — not complexity. We help you navigate your financial journey with confidence and purpose.
+</p>
+
+</div>
+<div class="home-img">
+    <img src="homepage_photo.png">
+  </div>
+</section>
+  <section class="clients-served">
+    <h2>
+        <span class="counter" data-target="100">0</span>+
+    </h2>
+
+    <p>Clients Served</p>
+
+    <div class="short-info">
+      <p>More than a number, every client represents a relationship built on trust, transparency, and a shared commitment to long-term financial success.</p>
+    </div>
+    
+
+</section>
+<script>
+  const section = document.querySelector(".clients-served");
+  const counter = document.querySelector(".counter");
+
+let started = false;
+
+window.addEventListener("scroll", () => {
+
+    if(started) return;
+
+    const top = section.getBoundingClientRect().top;
+
+    if(top < window.innerHeight - 100){
+
+        started = true;
+
+        const target = Number(counter.dataset.target);
+        let count = 0;
+
+        function update(){
+
+            const increment = target / 100;
+
+            if(count < target){
+                count += increment;
+                counter.textContent = Math.ceil(count);
+                requestAnimationFrame(update);
+            }else{
+                counter.textContent = target;
+            }
+
+        }
+
+        update();
+    }
+
+});
+
+</script>
+</body>
+  <!-- FOOTER -->
+  <footer>
+     © 2026 SatSan Capital. All Rights Reserved.
+  </footer>
+
+
+ 
