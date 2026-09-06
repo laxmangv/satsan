@@ -5,6 +5,9 @@
       box-sizing:border-box;
       font-family:Arial, sans-serif;
     }
+    <div class="top-bar">
+    <span>ARN: 150816</span>
+</div>
     top-bar {
     height: 30px;
     background-color: #f5f7fa;
