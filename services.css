@@ -5,7 +5,7 @@
       box-sizing:border-box;
       font-family:Arial, sans-serif;
     }
-    .top-bar {
+    top-bar {
     height: 30px;
     background-color: #f5f7fa;
     display: flex;
